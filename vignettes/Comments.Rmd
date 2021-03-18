@@ -1,5 +1,5 @@
 
-I created the an R package with:
+I created the R package with:
 
 
 ```{bash}
@@ -9,7 +9,7 @@ openapi-generator-cli generate -i https://api.omicidx.cancerdatasci.org/openapi.
 ```
 
 
-I created an R project within the package and uploaded to github.
+I created an Rstudio project within the package and uploaded to github.
 
 When I loaded the functions, I got these error messages:
 
