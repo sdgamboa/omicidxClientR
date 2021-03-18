@@ -8,6 +8,7 @@ Install the dependencies
 install.packages("jsonlite")
 install.packages("httr")
 install.packages("base64enc")
+
 ```
 
 
@@ -19,14 +20,36 @@ library(devtools)
 install_github("sdgamboa/omicidxClientR")
 ```
 
+```{r}
+library(dplyr)
+```
+
+
+
 
 Create a client object (`api`):
 
 ```{r}
-basePath <- "https://api.omicidx.cancerdatasci.org/swaggerdoc"
-client = ApiClient$new(basePath = basePath)
-api = DefaultApi$new(apiClient = client)
-api
+basePath <- "https://api.omicidx.cancerdatasci.org"
+client <-  ApiClient$new(basePath = basePath)
+api <-  SRAApi$new(apiClient = client)
+
+```
+
+```{r}
+result1 <- api$RunsForStudySraStudiesAccessionRunsGet(accession = "SRP114847",
+                                                     size = 10)
+
+df1 <- result1$hits
+
+```
+
+
+
+```{r}
+result2 <- api$StudiesSraStudiesGet()
+hit_list <- result2$toJSON()$hits
+df2 <- bind_rows(hit_list)
 
 ```
 

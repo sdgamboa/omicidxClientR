@@ -1,0 +1,38 @@
+
+I created the an R package with:
+
+
+```{bash}
+
+openapi-generator-cli generate -i https://api.omicidx.cancerdatasci.org/openapi.json -g r -o omicidxClientR --git-user-id sdgamboa --git-repo-id omicidxClientR --package-name omicidxClientR
+
+```
+
+
+I created an R project within the package and uploaded to github.
+
+When I loaded the functions, I got these error messages:
+
+```{r}
+# Error in parse(text = lines, n = -1, srcfile = srcfile) : 
+#   /home/usuario/Projects/omicidxAPI/omicidxClientR/R/biosample_api.R:159:91: unexpected '['
+# 158:     },
+# 159:     BiosampleByAccessionBiosampleSamplesAccessionGet = function(accession, include.fields=[
+#                                                                                                ^
+```
+
+```{r}
+# Error in parse(text = lines, n = -1, srcfile = srcfile) : 
+#   /home/usuario/Projects/omicidxAPI/omicidxClientR/R/sra_api.R:675:90: unexpected '['
+# 674:     },
+# 675:     ExperimentByAccessionSraExperimentsAccessionGet = function(accession, include.fields=[
+#                                                                                               ^
+```
+
+I changed "[]" for "{}" in the `biosample_api.R` and `sra_api.R` files within the R directory
+and I could load all of the functions without errors.
+
+
+
+
+
