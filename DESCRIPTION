@@ -1,0 +1,14 @@
+Package: omicidxClientR
+Title: R Package Client for OmicIDX
+Version: 1.0.0
+Authors@R: person("OpenAPI Generator community", email = "team@openapitools.org", role = c("aut", "cre"))
+Description:     The OmicIDX API documentation is available in three forms:  - [RapiDoc](/docs) - [OpenAPI/Swagger Interactive](/swaggerdoc) - [ReDoc (more readable in some ways)](/redoc)  
+URL: https://github.com/sdgamboa/omicidxClientR
+BugReports: https://github.com/sdgamboa/omicidxClientR/issues
+Depends: R (>= 3.3)
+Encoding: UTF-8
+License: Unlicense
+LazyData: true
+Suggests: testthat
+Imports: jsonlite, httr, R6, base64enc
+RoxygenNote: 6.0.1.9000

@@ -1,0 +1,32 @@
+
+# Getting Started with omicidxClientR
+
+
+Install the dependencies
+
+```{r}
+install.packages("jsonlite")
+install.packages("httr")
+install.packages("base64enc")
+```
+
+
+To install directly from Github, use `devtools`:
+
+```{r}
+install.packages("devtools")
+library(devtools)
+install_github("sdgamboa/omicidxClientR")
+```
+
+
+Create a client object (`api`):
+
+```{r}
+basePath <- "https://api.omicidx.cancerdatasci.org/swaggerdoc"
+client = ApiClient$new(basePath = basePath)
+api = DefaultApi$new(apiClient = client)
+api
+
+```
+
